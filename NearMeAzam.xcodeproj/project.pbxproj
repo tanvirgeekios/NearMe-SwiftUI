@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB7E1B2B2665F60D00B90D22 /* LandMarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E1B2A2665F60D00B90D22 /* LandMarkViewModel.swift */; };
+		EB7E1B2F2665FC9300B90D22 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E1B2E2665FC9300B90D22 /* ListView.swift */; };
 		EB8C9058266485D6000ABF7E /* NearMeAzamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C9057266485D6000ABF7E /* NearMeAzamApp.swift */; };
 		EB8C905A266485D6000ABF7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C9059266485D6000ABF7E /* ContentView.swift */; };
 		EB8C905C266485D8000ABF7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB8C905B266485D8000ABF7E /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB7E1B2A2665F60D00B90D22 /* LandMarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandMarkViewModel.swift; sourceTree = "<group>"; };
+		EB7E1B2E2665FC9300B90D22 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		EB8C9054266485D6000ABF7E /* NearMeAzam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearMeAzam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB8C9057266485D6000ABF7E /* NearMeAzamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeAzamApp.swift; sourceTree = "<group>"; };
 		EB8C9059266485D6000ABF7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB7E1B2D2665FC7F00B90D22 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EB7E1B2E2665FC9300B90D22 /* ListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EB8C904B266485D6000ABF7E = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +70,7 @@
 		EB8C9056266485D6000ABF7E /* NearMeAzam */ = {
 			isa = PBXGroup;
 			children = (
+				EB7E1B2D2665FC7F00B90D22 /* Views */,
 				EBEF6DFB2664A729004766D6 /* ViewModels */,
 				EB8C906D26648CBF000ABF7E /* Managers */,
 				EB8C9067266487A7000ABF7E /* Extension */,
@@ -98,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				EBEF6DFC2664A740004766D6 /* PlaceListVIewModel.swift */,
+				EB7E1B2A2665F60D00B90D22 /* LandMarkViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -173,6 +187,8 @@
 			files = (
 				EB8C906F26648CF3000ABF7E /* LocationManager.swift in Sources */,
 				EB8C905A266485D6000ABF7E /* ContentView.swift in Sources */,
+				EB7E1B2B2665F60D00B90D22 /* LandMarkViewModel.swift in Sources */,
+				EB7E1B2F2665FC9300B90D22 /* ListView.swift in Sources */,
 				EBEF6DFD2664A740004766D6 /* PlaceListVIewModel.swift in Sources */,
 				EB8C9058266485D6000ABF7E /* NearMeAzamApp.swift in Sources */,
 				EB8C906926648813000ABF7E /* MKCoordinateRegion.swift in Sources */,

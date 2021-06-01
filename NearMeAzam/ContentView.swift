@@ -8,9 +8,16 @@
 import SwiftUI
 import MapKit
 
+enum DisplayType {
+    case map
+    case list
+}
+
 struct ContentView: View {
     @StateObject private var placeListViewModel = PlaceListViewModel()
     @State private var userTrackingMode : MapUserTrackingMode = .follow
+    @State private var searchTerm = ""
+    @State private var displayType:DisplayType = .map
     
     private func getRegion()->Binding<MKCoordinateRegion>{
         guard let coordiate = placeListViewModel.currentLocation else {
@@ -20,7 +27,30 @@ struct ContentView: View {
     }
     
     var body: some View {
-        Map(coordinateRegion: getRegion(), interactionModes: .all, showsUserLocation: true, userTrackingMode: $userTrackingMode)
+        VStack {
+            
+            TextField("Search", text: $searchTerm, onEditingChanged: { _ in
+                
+            }, onCommit: {
+                // get all landmarks
+                placeListViewModel.searchLandMarks(searchTerm: searchTerm)
+            }).textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            Picker("Select", selection: $displayType) {
+                Text("Map").tag(DisplayType.map)
+                Text("List").tag(DisplayType.list)
+            }.pickerStyle(SegmentedPickerStyle())
+            
+            if displayType == .map{
+                Map(coordinateRegion: getRegion(), interactionModes: .all, showsUserLocation: true, userTrackingMode: $userTrackingMode, annotationItems:placeListViewModel.landMarks){ landmark in
+                    MapMarker(coordinate: landmark.coordinate)
+                    
+                }
+            }else if displayType == .list{
+                ListView(landmarks: placeListViewModel.landMarks)
+            }
+            
+        }.padding()
     }
 }
 
